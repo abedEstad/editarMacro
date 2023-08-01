@@ -21,7 +21,7 @@ if archivo_subida_excel is not None:
   st.write('Nombre:',nombre)
 
   st.write('Iniciando parte 2')
-  worksheetss = openpyxl.load_workbook(archivo_subida_excel,read_only = False, keep_vba = True)
+  worksheetss = load_workbook(archivo_subida_excel,read_only = False, keep_vba = True)
   st.write('Iniciando Parte 3')
   sheetss = worksheetss['PLANILLA']
   sheetss['AP2'] = "Languages"
