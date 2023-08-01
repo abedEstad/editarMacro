@@ -12,16 +12,19 @@ st.write('_Esta es una version de app que permite subir un archivo excel, editar
 
 st.write('Iniciando la prueba ...')
 archivo_subida_excel= st.file_uploader('Subir Planilla',type='xlsm',accept_multiple_files=False, label_visibility="visible",help=None)
+st.write('ARCHIVO:',archivo_subida_excel)
 if archivo_subida_excel is not None:
   data = archivo_subida_excel.getvalue().decode('utf-8',errors='ignore')
   parent_path = pathlib.Path(__file__).parent.parent.resolve()
+  st.write('PP:',parent_path)
   save_path = os.path.join(parent_path, "data")
+  st.write('SP:',parent_path)
   nombre =os.path.join('',archivo_subida_excel.name)
   nombreFinal = nombre.split('.')[0]
   st.write('Nombre:',nombre)
 
   st.write('Iniciando parte 2')
-  worksheetss = load_workbook(archivo_subida_excel,read_only = False, keep_vba = True)
+  worksheetss = load_workbook(nombre,read_only = False, keep_vba = True)
   st.write('Iniciando Parte 3')
   sheetss = worksheetss['PLANILLA']
   sheetss['AP2'] = "Languages"
