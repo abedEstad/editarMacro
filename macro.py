@@ -24,17 +24,6 @@ if archivo_subida_excel is not None:
   worksheetss = openpyxl.load_workbook(archivo_subida_excel,read_only = False, keep_vba = True)
   sheetss = worksheetss['PLANILLA']
   sheetss['AP2'] = "Languages"
-  sheetss['AP3'] = "Python"
-  sheetss['AP4'] = "Java"
-  sheetss['AP5'] = "C"
-  sheetss['AP6'] = "C#"
-  sheetss['AP7'] = "Swift"
-  sheetss['AP8'] = "No. of articles"
-  sheetss['AP9'] = 24
-  sheetss['AP10'] = 45
-  sheetss['AP11'] = 66
-  sheetss['AP12'] = 43
-  sheetss['AP13'] = 12
   worksheetss.save(nombre)
 
   st.write('La creación de Bultos ha sido realizada con éxito. \n Por favor, revise su archivo.\n Gracias')
